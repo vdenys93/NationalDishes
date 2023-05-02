@@ -1,9 +1,13 @@
 package model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,7 +29,9 @@ public class DishList {
 	private String 	dishName;
 	@Column(name="DESCRIPTION")
 	private String 	dishDescription;
-	
+	@OneToMany(mappedBy="dishList", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Ingredient> ingredients;
+
 	
 	public DishList() {
 		super();
@@ -111,7 +117,13 @@ public class DishList {
 				+ dishDescription + "]";
 	}
 	
-	
+	  public List<Ingredient> getIngredients() {
+	        return ingredients;
+	    }
+
+	    public void setIngredients(List<Ingredient> ingredients) {
+	        this.ingredients = ingredients;
+	    }
 	
 
 }

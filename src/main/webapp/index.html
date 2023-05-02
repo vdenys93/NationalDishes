@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="dish.css">
-<title >Welcome</title>
+<title>Welcome</title>
 </head>
-<body >
-<form class="container" action = "addItemServlet" method="post">
-Country: <input type ="text" name = "country"><br />
-Dish Name: <input type = "text" name = "name"><br />
-Description: <input type = "text" name = "description"><br />
-<input type = "submit" value="Add Item">
+<body>
+<form class="container" action="addItemServlet" method="post">
+  Country: <input type="text" name="country"><br />
+  Dish Name: <input type="text" name="name"><br />
+  Description: <input type="text" name="description"><br />
+  <input type="submit" value="Add Item">
 </form>
 <br />
-<a class="center" href = "viewAllItemsServlet">View the complete list</a>
-
+ <form class="container" action="addIngredient" method="post">
+    Dish Name: <input type="text" name="dishName" /><br />
+    Ingredient Name: <input type="text" name="ingredientName" /><br />
+    <input type="submit" value="Add Ingredient" />
+</form>
+<br />
+<a class="center" href="viewAllItemsServlet">View the complete dish list</a>
+<br />
+<a class="center" href="viewAllIngredients">View the complete ingredient list</a>
 </body>
 </html>

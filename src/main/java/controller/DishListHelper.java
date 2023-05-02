@@ -110,6 +110,14 @@ public class DishListHelper {
 		em.close();
 		return foundItems;
 		}
+	public DishList searchForDishById(int dishId) {
+	    EntityManager em = emfactory.createEntityManager();
+	    em.getTransaction().begin();
+	    DishList found = em.find(DishList.class, dishId);
+	    em.close();
+	    return found;
+	}
+
 	public void cleanUp(){
 		emfactory.close();
 		}
